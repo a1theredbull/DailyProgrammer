@@ -1,0 +1,5 @@
+C:\Users\Alex\DailyProgrammer\NCharacterSetStrings\NCharacterSetStrings\NCharacterSetStrings\bin\Debug\NCharacterSetStrings.exe
+C:\Users\Alex\DailyProgrammer\NCharacterSetStrings\NCharacterSetStrings\NCharacterSetStrings\bin\Debug\NCharacterSetStrings.pdb
+C:\Users\Alex\DailyProgrammer\NCharacterSetStrings\NCharacterSetStrings\NCharacterSetStrings\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Alex\DailyProgrammer\NCharacterSetStrings\NCharacterSetStrings\NCharacterSetStrings\obj\x86\Debug\NCharacterSetStrings.exe
+C:\Users\Alex\DailyProgrammer\NCharacterSetStrings\NCharacterSetStrings\NCharacterSetStrings\obj\x86\Debug\NCharacterSetStrings.pdb

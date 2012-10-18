@@ -17,5 +17,5 @@ def chord_to_note(chord):
 	return resultNotes
 
 chord = input('Enter a chord: ').lower()
-print( 'Notes in', chord, ':', chord_to_note(chord) )
+print('Notes in', chord, ':', chord_to_note(chord))
 

@@ -1,5 +1,4 @@
-
-Taken from: http://www.reddit.com/r/dailyprogrammer/comments/y0z3y/8102012_challenge_87_intermediate_chord_lookup/
+Challenge from: http://www.reddit.com/r/dailyprogrammer/comments/y0z3y/8102012_challenge_87_intermediate_chord_lookup/
 
 For this challenge, your task is to write a program that takes a musical chord name from input (like Gm7) and outputs the notes found in that chord (G A# D F). If you're no musician, don't worry -- the progress is quite simple. The first thing you need to know about is the 12 notes of the chromatic scale:
 C C# D D# E F F# G G# A A# B

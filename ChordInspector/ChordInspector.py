@@ -1,7 +1,6 @@
 import re
 
 scale = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
-
 tones_dict = {None:[0,4,7], 'm':[0,3,7], '7':[0,4,7,10], 'm7':[0,3,7,10], 'maj7':[0,4,7,11]}
 
 def chord_to_note(chord):

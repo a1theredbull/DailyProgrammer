@@ -17,6 +17,6 @@ data = []
 for line in file:
 	data.append(float(line))
 
-print('Mean: ', calc_mean(data) )
-print('Variance: ', calc_var(data) )
-print('Standard Deviation: ', calc_stdvar(data) )
+print("Mean: ", calc_mean(data) )
+print("Variance: ", calc_var(data) )
+print("Standard Deviation: ", calc_stdvar(data) )

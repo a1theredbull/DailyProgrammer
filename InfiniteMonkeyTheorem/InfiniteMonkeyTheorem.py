@@ -16,7 +16,7 @@ valid_words = []
 for line in file:
 	valid_words.append(line.strip())
 
-letters = 'abcdefghjklmnopqrstuvwxyz      '
+letters = 'aaabbccddeeeffgghhiiijkllmmnnoooppqrrssttuuuvwwxyyz           '
 gibberish = ''
 
 print('Monkey is about to mash the keyboard...press Ctrl+C to exit!')

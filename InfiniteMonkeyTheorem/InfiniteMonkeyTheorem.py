@@ -12,7 +12,7 @@ filename = input('Monkey will start typing once you give it a file of valid word
 file = open(filename, 'r')
 valid_words = []
 for line in file:
-	valid_words.append(line.strip())
+	valid_words.append(line.strip().lower())
 
 letters = 'aaabbccddeeeffgghhiiijkllmmnnoooppqrrssttuuuvwwxyyz           '
 gibberish = ''
@@ -27,11 +27,15 @@ while count < 100: #for this implementation, writes up to 100 valid 3+ letter wo
 	c = random.choice(letters)
 	if c is ' ' and gibberish in valid_words:
 		if len(gibberish) >= 3:
+			if len(gibberish) == 3 and random.randrange(0, 8) != 0: #1/8 the chance of 3-letter words
+				gibberish = ''										#since they are the most typed
+				continue
 			print(gibberish)
 			written_by_monkey += gibberish + ' '
 			count += 1
+			sys.stdout.flush()
 		gibberish = ''
-	elif len(gibberish) > 14: #too long
+	elif len(gibberish) > 12: #too long
 		gibberish = ''
 	else:
 		gibberish += c

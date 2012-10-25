@@ -28,7 +28,7 @@ while count < 100: #for this implementation, writes up to 100 valid 3+ letter wo
 	if c is ' ' and gibberish in valid_words:
 		if len(gibberish) >= 3:
 			if len(gibberish) == 3 and random.randrange(0, 8) != 0: #1/8 the chance of 3-letter words
-				gibberish = ''										#since they are the most typed
+				gibberish = ''					#since they are the most typed
 				continue
 			print(gibberish)
 			written_by_monkey += gibberish + ' '

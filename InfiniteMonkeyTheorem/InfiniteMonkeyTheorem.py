@@ -10,7 +10,7 @@ signal.signal(signal.SIGINT, print_monkey_doc)
 print('Theorem: If a monkey randomly mashes on a keyboard for an infinite amount of time, he/she will eventually' +
  ' write any piece of literature(i.e. Hamlet, but astronomically small chance).\n')
 
-filename = raw_input('Monkey will start typing once you give it a file of valid words: ')
+filename = input('Monkey will start typing once you give it a file of valid words: ')
 file = open(filename, 'r')
 valid_words = []
 for line in file:
@@ -24,7 +24,7 @@ print('Be patient: Each valid word may take thousands of monkey attempts.')
 written_by_monkey = ''
 count = 0
 
-while count < 30: #for this implementation, writes up to 30 valid 3+ letter words
+while count < 100: #for this implementation, writes up to 100 valid 3+ letter words
 	c = random.choice(letters)
 	if c is ' ':
 		if gibberish in valid_words:
@@ -39,3 +39,6 @@ while count < 30: #for this implementation, writes up to 30 valid 3+ letter word
 		gibberish = ''
 	else:
 		gibberish += c
+
+print('\nThe monkey wrote this for you!')
+print(written_by_monkey)

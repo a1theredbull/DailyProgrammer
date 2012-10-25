@@ -10,7 +10,7 @@ signal.signal(signal.SIGINT, print_monkey_doc)
 print('Theorem: If a monkey randomly mashes on a keyboard for an infinite amount of time, he/she will eventually' +
  ' write any piece of literature(i.e. Hamlet, but astronomically small chance).\n')
 
-filename = raw_input('Monkey will start typing once you give it a file of valid words: ')
+filename = input('Monkey will start typing once you give it a file of valid words: ')
 file = open(filename, 'r')
 valid_words = []
 for line in file:

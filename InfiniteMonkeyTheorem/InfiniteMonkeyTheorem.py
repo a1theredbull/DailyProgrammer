@@ -26,14 +26,13 @@ count = 0
 
 while count < 100: #for this implementation, writes up to 100 valid 3+ letter words
 	c = random.choice(letters)
-	if c is ' ':
-		if gibberish in valid_words:
-			if len(gibberish) > 3:
-				print(gibberish)
-				written_by_monkey += gibberish + ' '
-				count += 1
-			gibberish = ''
-        elif len(gibberish) > 14: #too long gibberish
+	if c is ' ' and gibberish in valid_words:
+		if len(gibberish) >= 3:
+			print(gibberish)
+			written_by_monkey += gibberish + ' '
+			count += 1
+		gibberish = ''
+	elif len(gibberish) > 14: #too long
 		gibberish = ''
 	else:
 		gibberish += c

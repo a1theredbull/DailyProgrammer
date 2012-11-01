@@ -12,6 +12,8 @@ def findPalindrome(a1, a2, b1, b2):
 			if str(product)[::-1] == str(product):
 				result.append(str(i) + ' x ' + str(j) + ' = ' + str(product))
 				found = True
+	if not found:
+		result.append('No product palindromes found!')
 	return result
 
 palindromes = findPalindrome(frstart, frend, srstart, srend)

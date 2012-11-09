@@ -19,6 +19,7 @@ namespace NCharacterSetStrings
             System.Console.ReadLine();
         }
 
+        //challenge was actually just to write this function, so I kept it as a function
         private bool ncset(string s, int n)
         {
             return s.ToCharArray().Distinct<char>().Count<char>() <= n;

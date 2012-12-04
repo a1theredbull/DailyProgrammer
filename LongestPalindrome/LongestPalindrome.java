@@ -2,18 +2,23 @@ class LongestPalindrome
 {
 	public static void main(String[] args)
 	{
-		LongestPalindrome lp = new LongestPalindrome("racecar");
-		lp = new LongestPalindrome("racecar driver");
-		lp = new LongestPalindrome("refeeeefer");
-		lp = new LongestPalindrome("hello,palindromemordnilap find the longest palindrome");
-		lp = new LongestPalindrome(".");
-		lp = new LongestPalindrome("");
-		lp = new LongestPalindrome("racecar+suparacecarapus-platypus");
+		LongestPalindrome lp = new LongestPalindrome();
+		lp.parse("racecar");
+		lp.parse("racecar driver");
+		lp.parse("refeeeefer");
+		lp.parse("hello,palindromemordnilap find the longest palindrome");
+		lp.parse(".");
+		lp.parse("");
+		lp.parse("racecar+suparacecarapus-platypus");
 	}
 	
-	public LongestPalindrome(String line)
+	public void parse(String line)
 	{
-		if(line.isEmpty()) return;
+		if(line.isEmpty())
+		{
+			System.out.println("");
+			return;
+		}
 		
 		char[] chars = line.toCharArray();
 		String longest = "";
@@ -26,9 +31,7 @@ class LongestPalindrome
 			int max = 0;
 			
 			if(offset > 0)
-			{
 				max = i + offset;
-			}
 			
 			for(int j = 0; j < chars.length/2 + 1; j++)
 			{

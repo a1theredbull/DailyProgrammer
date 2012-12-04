@@ -3,13 +3,19 @@ class LongestPalindrome
 	public static void main(String[] args)
 	{
 		LongestPalindrome lp = new LongestPalindrome();
+		
 		lp.parse("racecar");
 		lp.parse("racecar driver");
 		lp.parse("refeeeefer");
 		lp.parse("hello,palindromemordnilap find the longest palindrome");
 		lp.parse(".");
 		lp.parse("");
+		lp.parse("a.");
 		lp.parse("racecar+suparacecarapus-platypus");
+		lp.parse("aa");
+		lp.parse("aaa");
+		lp.parse("aaaa");
+		lp.parse("baaaaa");
 	}
 	
 	public void parse(String line)
@@ -23,7 +29,7 @@ class LongestPalindrome
 		char[] chars = line.toCharArray();
 		String longest = "";
 		
-		for(int i = 1; i < chars.length-1; i++)
+		for(int i = 0; i < chars.length-1; i++)
 		{
 			int offset = detectCluster(chars, i);
 			StringBuilder canindate = new StringBuilder("");
@@ -47,11 +53,14 @@ class LongestPalindrome
 					break;
 			}
 			
-			for(int j = min; j <= max; j++)
-				canindate.append(chars[j]);
-			
-			if(canindate.length() > longest.length())
+			if(max-min > longest.length())
+			{
+				for(int j = min; j <= max; j++)
+					canindate.append(chars[j]);
 				longest = canindate.toString();
+			}
+
+			i += offset;
 		}
 		
 		if(longest.isEmpty())
@@ -63,12 +72,16 @@ class LongestPalindrome
 	private int detectCluster(char[] chars, int start)
 	{
 		int result = 0;
-		for(int i = start; i < chars.length; i++)
+		for(int i = start+1; i < chars.length; i++)
+		{	
 			if(chars[start] != chars[i])
 			{
 				result = i-start-1;
 				break;
 			}
+			else if(i == chars.length-1) //last case
+				result = i-start;
+		}
 		return result;
 	}
 }

@@ -9,8 +9,8 @@ def chord_to_note(chord):
 
 	position = scale.index(note[0].upper())
 	tones = tones_dict[note[1]]
-	resultNotes = tones
 
+	resultNotes = tones
 	for i in range(len(tones)):
 		resultNotes[i] = scale[(position+tones[i]) % len(scale)]
 	return resultNotes

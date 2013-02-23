@@ -15,7 +15,7 @@ namespace NCharacterSetStrings
 
             int count = 0;
             foreach (string line in lines)
-                if(ncset(line, 4)) count++;
+                if(ncset(line, target)) count++;
             System.Console.WriteLine(count);
             System.Console.ReadLine();
         }

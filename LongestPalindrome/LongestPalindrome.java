@@ -1,3 +1,4 @@
+/* O(N^2) */
 class LongestPalindrome
 {
 	public static void main(String[] args)
@@ -14,8 +15,10 @@ class LongestPalindrome
 		lp.parse("racecar+suparacecarapus-platypus");
 		lp.parse("aa");
 		lp.parse("aaa");
-		lp.parse("aaaa");
-		lp.parse("baaaaa");
+		lp.parse("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaad");
+		lp.parse("baaaaaob");
+		lp.parse("banana");
+		lp.parse("a thisisapalindrome.....emordnilapasisiht");
 	}
 	
 	public void parse(String line)
@@ -31,23 +34,23 @@ class LongestPalindrome
 		
 		for(int i = 0; i < chars.length-1; i++)
 		{
-			int offset = detectCluster(chars, i);
+			int clusterSize = detectCluster(chars, i);
 			StringBuilder canindate = new StringBuilder("");
 			int min = 0;
 			int max = 0;
 			
-			if(offset > 0)
-				max = i + offset;
+			if(clusterSize > 0)
+				max = i + clusterSize;
 			
 			for(int j = 0; j < chars.length/2 + 1; j++)
 			{
-				if(i-j < 0 || i+offset+j > chars.length-1)
+				if(i-j < 0 || i+clusterSize+j > chars.length-1)
 					break;
 
-				if(chars[i-j] == chars[i+offset+j])
+				if(chars[i-j] == chars[i+clusterSize+j])
 				{
 					min = i - j;
-					max = i + offset + j;
+					max = i + clusterSize + j;
 				}
 				else
 					break;
@@ -60,7 +63,8 @@ class LongestPalindrome
 				longest = canindate.toString();
 			}
 
-			i += offset;
+			//don't have to check other letters in same cluster
+			i += clusterSize;
 		}
 		
 		if(longest.isEmpty())
@@ -69,6 +73,7 @@ class LongestPalindrome
 			System.out.println(longest);
 	}
 	
+	/* returns the number of sequential same chars from index start */
 	private int detectCluster(char[] chars, int start)
 	{
 		int result = 0;
